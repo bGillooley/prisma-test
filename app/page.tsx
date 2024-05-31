@@ -15,6 +15,7 @@ export default async function Home() {
           return user.email;
         })}
       </p>
+      <p>Dan</p>
     </div>
   );
 }
