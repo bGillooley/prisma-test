@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { auth } from "@/auth";
 import { SignIn } from "@/components/page";
 const user = async () => {
   const user = await prisma.user.findMany();
@@ -7,6 +8,7 @@ const user = async () => {
 
 export default async function Home() {
   const users = await user();
+  const session = await auth();
   console.log("Bukky:", users);
   return (
     <div className="text-xl">
@@ -16,6 +18,7 @@ export default async function Home() {
         })}
       </p>
       <p>Dan May</p>
+      <p>You must be: {session?.user?.name}</p>
       <SignIn />
     </div>
   );
