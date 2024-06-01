@@ -7,17 +7,6 @@ const prisma = new PrismaClient();
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [
-    google({
-      profile(profile) {
-        return {
-          id: profile.sub,
-          name: `${profile.given_name} ${profile.family_name}`,
-          email: profile.email,
-          role: profile.role,
-        };
-      },
-    }),
-  ],
+  providers: [google],
   session: { strategy: "jwt" },
 });
