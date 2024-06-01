@@ -18,7 +18,7 @@ export default async function Home() {
         })}
       </p>
       <p>Dan May</p>
-      <p>You must be: {session?.user?.name}</p>
+      <p>You must be: {session?.user?.name} and you are an asshole</p>
       <SignIn />
     </div>
   );
