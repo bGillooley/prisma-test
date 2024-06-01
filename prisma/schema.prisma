@@ -14,7 +14,7 @@ model User {
   email         String          @unique
   emailVerified DateTime?
   image         String?
-  role    Role     @default(USER)
+  role    String     @default("editor")
   events Event[]
   accounts      Account[]
   sessions      Session[]
@@ -96,7 +96,3 @@ model Event {
   authorId  String?
 }
 
-enum Role {
-  USER
-  ADMIN
-}
