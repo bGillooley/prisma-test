@@ -1,8 +1,9 @@
 import { signIn, signOut } from "@/auth";
 
-export function SignIn() {
+export default function page() {
   return (
-    <>
+    <div>
+      <p>Login Page</p>
       <form
         action={async () => {
           "use server";
@@ -19,6 +20,6 @@ export function SignIn() {
           Signout with Google
         </button>
       </form>
-    </>
+    </div>
   );
 }
